@@ -1,0 +1,32 @@
+// convert array to hash map (keeping key as element and pair as its frequency
+// java
+import java.util.*;
+
+import javax.lang.model.util.ElementScanner14;
+class Main
+{
+public static void main(String[] args) {
+    HashMap <Integer,Integer> freqhash = new HashMap<>();
+    Scanner scr = new Scanner(System.in);
+    int a[] = new int[10];
+    System.out.println("enter array elements");
+    for(int i = 0 ; i<a.length;i++)
+    {
+        a[i] = scr.nextInt();
+    }
+
+    for( int j : a)
+    {
+        if( freqhash.containsKey(j))
+        {
+            freqhash.put(j,freqhash.get(j)+1);
+        }
+        else
+        {
+            freqhash.put(j,1);
+        }
+    }
+        System.out.print(freqhash);
+
+}
+}
