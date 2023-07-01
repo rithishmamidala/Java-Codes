@@ -1,0 +1,37 @@
+// Print unique elements of array
+// java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scr = new Scanner(System.in);
+        int n = scr.nextInt();
+        int arr[] = new int[n];
+        HashMap<Integer,Integer> freq = new HashMap<>();
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = scr.nextInt();
+        }
+        for(int i : arr)
+        {
+            if(freq.containsKey(i))
+            {
+                freq.put(i,freq.get(i)+1);
+            }
+            else
+            {
+                freq.put(i,1);
+            }
+        }
+        for(int i : arr)
+        {
+            if(freq.get(i)==1)
+            {
+                System.out.print(i+" ");
+            }
+        }
+        
+    }
+}
